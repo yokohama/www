@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :words
-
+  root :to => 'words#play'
   match 'play', via: :get, controller: :words
 
+  resources :words
 end
