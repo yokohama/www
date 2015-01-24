@@ -1,0 +1,53 @@
+<%
+    @words = Word.all
+%>
+
+<!-- TODO:このdivを縦横画面イッパイにしたい -->
+<div id="myCarousel" class="carousel slide" data-interval="false">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <% @words.each_with_index do |word, index| %>
+      <div class="<%= 'active' if index == 0 %> item">
+        <center>
+          <div style="margin:100px 0px 100px 0px">
+            <h1><%= word.english %></h1>
+          </div>
+          <div style="padding-bottom:50px">
+            <input type="button" value="check!" class="btn btn-danger" onclick="answer('<%= word.japanese %>');"></input>
+          </div>
+        </center>
+      </div>
+    <% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  <!--
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev"><%= image_tag 'pref.png' %></a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next"><%= image_tag 'next.png' %></a>
+  -->
+</div>
+
+<!-- TODO:モーダルの表示位置を設定したい -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-body">
+    <div id="answer"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+  function answer(text) {
+    $('#answer').html("<h2>" + text + "</h2>")
+    $('#myModal').modal('show')
+  }
+-->
+</script>
+
+<style type="text/css">
+<!--
+  #myModal {
+    color : white;
+  }
+-->
+</style>

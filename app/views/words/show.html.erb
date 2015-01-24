@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>English</th>
+      <th>Japanese</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @word.english %></td>
+      <td><%= @word.japanese %></td>
+  </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
