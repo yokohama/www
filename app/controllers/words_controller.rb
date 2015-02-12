@@ -47,7 +47,6 @@ class WordsController < ApplicationController
 
   def play
     render layout: 'play'
-    @words = Word.all
   end
 
   private
