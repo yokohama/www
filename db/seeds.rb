@@ -6,13 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-=begin
-f = open("db/resources/words.csv")
-f.each do |line|
-  p line
-end
-f.close
-=end
+Word.delete_all
 
 lines = CSV.read("db/resources/words.csv")
 lines.each do |line|
